@@ -1,0 +1,20 @@
+--- a/domain_registration.module
++++ b/domain_registration.module
+@@ -130,14 +130,14 @@
+       // Allow only domains listed to register.
+       case 0:
+         if (!$match) {
+-          form_set_error('account', variable_get('domain_registration_message', $default_message));
++          form_set_error('mail', variable_get('domain_registration_message', $default_message));
+         }
+         break;
+
+       // Prevent domains listed from registering.
+       case 1:
+         if ($match) {
+-          form_set_error('account', variable_get('domain_registration_message', $default_message));
++          form_set_error('mail', variable_get('domain_registration_message', $default_message));
+         }
+         break;
+     }
+
