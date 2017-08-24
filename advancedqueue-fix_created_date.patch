@@ -1,0 +1,15 @@
+--- a/advancedqueue.queue.inc
++++ b/advancedqueue.queue.inc
+@@ -46,10 +46,8 @@
+       'title' => truncate_utf8($title_raw, $title_max, FALSE, TRUE),
+       'data' => serialize($data),
+       // We cannot rely on REQUEST_TIME because many items might be created
+-      // by a single request which takes longer than 1 second. However we allow
+-      // the creator to post-date their queue items as with the UID and title
+-      // properties.
+-      'created' => !empty($data['created']) ? $data['created'] : time(),
++      // by a single request which takes longer than 1 second.
++      'created' => time(),
+       'status' => ADVANCEDQUEUE_STATUS_QUEUED,
+     );
+     if ($key) {
