@@ -1,0 +1,12 @@
+--- a/includes/base.inc
++++ b/includes/base.inc
+@@ -1349,6 +1349,9 @@ abstract class MigrationBase {
+     if (is_numeric($value)) {
+       return $value;
+     }
++    if (is_array($value)) {
++      $value = $value[0]['value'];
++    }
+ 
+     // Default empty values to now
+     if (empty($value)) {
