@@ -1,0 +1,19 @@
+--- a/logintoboggan.module
++++ b/logintoboggan.module
+@@ -486,6 +486,16 @@
+
+   // Terminate if an error occurred during user_save().
+   if (!$account) {
++    watchdog('logintoboggan_user_register', '$reg_pass_set <pre>"@tmp"</pre>', array('@tmp' => print_r($reg_pass_set, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$pre_auth <pre>"@tmp"</pre>', array('@tmp' => print_r($pre_auth, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$pass <pre>"@tmp"</pre>', array('@tmp' => print_r($pass, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$status <pre>"@tmp"</pre>', array('@tmp' => print_r($status, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$validating_id <pre>"@tmp"</pre>', array('@tmp' => print_r($validating_id, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$form_state <pre>"@tmp"</pre>', array('@tmp' => print_r($form_state, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$form <pre>"@tmp"</pre>', array('@tmp' => print_r($form, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$account <pre>"@tmp"</pre>', array('@tmp' => print_r($account, TRUE)), WATCHDOG_DEBUG);
++    watchdog('logintoboggan_user_register', '$edit <pre>"@tmp"</pre>', array('@tmp' => print_r($edit, TRUE)), WATCHDOG_DEBUG);
++
+     drupal_set_message(t("Error saving user account."), 'error');
+     $form_state['redirect'] = '';
+     return;
