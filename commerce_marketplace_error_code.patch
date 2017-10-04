@@ -1,0 +1,16 @@
+Index: modules/payment/includes/commerce_marketplace_payment.checkout_pane.inc
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- modules/payment/includes/commerce_marketplace_payment.checkout_pane.inc	(revision 90d825e13cd99f1f2d8dcf116e49f22f76f0a7ef)
++++ modules/payment/includes/commerce_marketplace_payment.checkout_pane.inc	(revision )
+@@ -481,7 +481,7 @@
+         }
+         else {
+           // Otherwise display the failure message and send the customer back.
+-          drupal_set_message(t('Payment failed at the payment server. Please review your information and try again.'), 'error', FALSE);
++          //drupal message set by commerce_marketplace_hipay_tpp_redirect_form_validate()
+ 
+           commerce_payment_redirect_pane_previous_page($group_order, t('Customer payment submission failed at the payment gateway.'));
+         }
